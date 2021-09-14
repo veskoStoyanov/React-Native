@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { View, TextInput, Image, Button } from "react-native";
-import firebase from "firebase/app";
-require("firebase/firestore");
-require("firebase/firebase-storage");
+import React, { useState } from 'react';
+import { View, TextInput, Image, Button } from 'react-native';
+import firebase from 'firebase/app';
+require('firebase/firestore');
+require('firebase/firebase-storage');
 
 const SaveScreen = (props) => {
-  const [caption, setCaption] = useState("");
+  const [caption, setCaption] = useState('');
 
   const savePostData = (downloadURL) => {
     firebase
       .firestore()
-      .collection("posts")
+      .collection('posts')
       .doc(firebase.auth().currentUser.uid)
-      .collection("userPosts")
+      .collection('userPosts')
       .add({
         downloadURL,
         caption,
@@ -48,17 +48,17 @@ const SaveScreen = (props) => {
       console.log(snapshot);
     };
 
-    task.on("state_changed", taskProgress, taskError, taskCompleted);
+    task.on('state_changed', taskProgress, taskError, taskCompleted);
   };
 
   return (
     <View style={{ flex: 1 }}>
       <Image source={{ uri: props.route.params.image }} />
       <TextInput
-        placeholder="Write a Caption"
+        placeholder='Write a Caption'
         onChangeText={(text) => setCaption(text)}
       />
-      <Button title="Save" onPress={uploadImage} />
+      <Button title='Save' onPress={uploadImage} />
     </View>
   );
 };
