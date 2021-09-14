@@ -39,7 +39,6 @@ const App = (props) => {
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-    console.log(firebase);
     firebase.auth().onAuthStateChanged((user) => {
       if (!user) {
         setLoggedIn(false);
@@ -74,6 +73,7 @@ const App = (props) => {
               name="Main"
               component={MainScreen}
               options={{ headerShown: false }}
+              navigation={props.navigation}
             />
              <Stack.Screen
               name="Add"

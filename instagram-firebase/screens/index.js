@@ -5,5 +5,6 @@ export { default as FeedScreen } from './main/FeedScreen';
 export { default as AddScreen } from './main/AddScreen';
 export { default as ProfileScreen } from './main/ProfileScreen';
 export { default as SaveScreen } from './main/SaveScreen';
+export { default as SearchScreen } from './main/SearchScreen';
 
 

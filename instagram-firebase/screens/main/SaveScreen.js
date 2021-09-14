@@ -12,7 +12,7 @@ const SaveScreen = (props) => {
       .firestore()
       .collection("posts")
       .doc(firebase.auth().currentUser.uid)
-      .collection("userPost")
+      .collection("userPosts")
       .add({
         downloadURL,
         caption,
